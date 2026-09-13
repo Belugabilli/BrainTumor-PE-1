@@ -1,0 +1,5 @@
+classification_weights: weights/classification/best_model.pth
+segmentation_weights: weights/segmentation/best_model.pth
+
+device: mps
+confidence_threshold: 0.5

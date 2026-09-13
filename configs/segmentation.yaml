@@ -1,0 +1,34 @@
+seed: 42
+
+dataset:
+  train_images: datasets/BRISC2025/segmentation_task/train/images
+  train_masks: datasets/BRISC2025/segmentation_task/train/masks
+  test_images: datasets/BRISC2025/segmentation_task/test/images
+  test_masks: datasets/BRISC2025/segmentation_task/test/masks
+  image_size: 512
+
+training:
+  batch_size: 8
+  epochs: 60
+  learning_rate: 0.0001
+
+model:
+  architecture: UnetPlusPlus
+  encoder: efficientnet-b1
+  encoder_weights: imagenet
+
+optimizer:
+  name: Adam
+
+scheduler:
+  name: CosineAnnealingWarmRestarts
+
+loss:
+  dice_weight: 0.7
+  focal_weight: 0.3
+
+checkpoint:
+  save_dir: weights/segmentation
+
+logging:
+  log_dir: logs/segmentation

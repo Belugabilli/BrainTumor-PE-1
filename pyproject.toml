@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brain_tumor_reproduction"
+version = "0.1.0"
+
+[tool.setuptools]
+packages = ["datasets_loader", "models", "engine", "utils", "losses", "inference"]

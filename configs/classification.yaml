@@ -1,0 +1,40 @@
+seed: 42
+
+dataset:
+  train_dir: datasets/classification_task/train
+  test_dir: datasets/classification_task/test
+  image_size: 224
+  num_workers: 8
+
+training:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  validation_split: 0.2
+  shuffle: true
+
+model:
+  name: PE1Classifier
+  backbone: efficientnet_b3
+  pretrained: true
+  num_classes: 4
+  dropout: 0.3
+  hidden_dim: 512
+
+optimizer:
+  name: Adam
+
+scheduler:
+  name: ReduceLROnPlateau
+  factor: 0.1
+  patience: 5
+
+loss:
+  name: CrossEntropyLoss
+
+checkpoint:
+  save_dir: weights/classification
+
+logging:
+  log_dir: logs/classification
