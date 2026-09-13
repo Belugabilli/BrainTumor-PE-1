@@ -1,14 +1,12 @@
-# Difference Matrix: OLD (Baseline) vs NEW (Project Exhibition 1 - PE1)
+# Difference Matrix: OLD Baseline vs NEW Project Exhibition 1 (PE1)
 
-Comparison between the **OLD Baseline Repository** ([BrainTumor-Reproduction](https://github.com/Belugabilli/BrainTumor-Reproduction)) and the **NEW Project Exhibition 1 (PE1) Model** ([BrainTumor-PE-1](https://github.com/Belugabilli/BrainTumor-PE-1.git)).
+Comparative evaluation between the **OLD Baseline Repository** ([BrainTumor-Reproduction](https://github.com/Belugabilli/BrainTumor-Reproduction)) and the **NEW Project Exhibition 1 (PE1) Model** ([BrainTumor-PE-1](https://github.com/Belugabilli/BrainTumor-PE-1.git)).
 
 ---
-
 
 ## 1. System & Architecture Comparison
 
 | Feature / Property | OLD Baseline (`BrainTumor-Reproduction`) | NEW Project Exhibition 1 (`BrainTumor-PE1`) | Difference (NEW - OLD) |
-
 | :--- | :--- | :--- | :--- |
 | **Model Backbone** | EfficientNet-B1 | EfficientNet-B3 | Upgrade B1 → B3 |
 | **Feature Vector Dimension** | 1,280 | 1,536 | +256 features |
@@ -16,7 +14,7 @@ Comparison between the **OLD Baseline Repository** ([BrainTumor-Reproduction](ht
 | **Total Parameters** | **6,518,308** | **11,488,300** | **+4,969,992 (+76.25%)** |
 | **Trainable Parameters** | 6,518,308 | 11,488,300 | +4,969,992 |
 | **Input Image Resolution** | 224 × 224 | 224 × 224 | Identical |
-| **Optimizer & LR** | Adam ($10^{-4}$), Weight Decay $10^{-5}$ | Adam ($10^{-4}$), Weight Decay $10^{-5}$ | Identical |
+| **Optimizer & Learning Rate** | Adam ($10^{-4}$), Weight Decay $10^{-5}$ | Adam ($10^{-4}$), Weight Decay $10^{-5}$ | Identical |
 | **LR Scheduler** | `ReduceLROnPlateau(factor=0.1, patience=5)` | `ReduceLROnPlateau(factor=0.1, patience=5)` | Identical |
 | **Loss Function** | CrossEntropyLoss | CrossEntropyLoss | Identical |
 | **Dataset Split Protocol** | 4,000 Train / 1,000 Val / 1,000 Test | 4,000 Train / 1,000 Val / 1,000 Test | Identical (`seed=42`) |
@@ -44,13 +42,16 @@ Comparison between the **OLD Baseline Repository** ([BrainTumor-Reproduction](ht
 | :--- | :---: | :---: | :---: | :---: |
 | **glioma** | **0.9922** | 0.9921 | -0.0001 | 254 images |
 | **meningioma** | **0.9870** | 0.9787 | -0.0083 | 306 images |
-| **no_tumor** | **0.9933** | 0.9859 | -0.0074 | 140 / 300 images |
-| **pituitary** | **1.0000** | 0.9916 | -0.0084 | 300 / 140 images |
+| **no_tumor** | **0.9933** | 0.9859 | -0.0074 | 300 images |
+| **pituitary** | **1.0000** | 0.9916 | -0.0084 | 140 images |
 
 ---
 
-## 4. Scientific Conclusion
+## 4. Key Takeaways & Scientific Summary
 
-1. **Accuracy & F1**: The **OLD Baseline (EfficientNet-B1)** achieves higher accuracy (**0.9920** vs 0.9870) and higher Macro F1 (**0.9931** vs 0.9871) than NEW PE1.
-2. **Model Efficiency**: The OLD baseline requires **4,969,992 fewer parameters** (6.52M vs 11.49M).
-3. **Verdict**: Upgrading the backbone to EfficientNet-B3 and adding a 512-dim GELU classification head did not improve performance on this task under the controlled experimental protocol.
+> [!NOTE]
+> **Key Finding**: The **OLD Baseline (EfficientNet-B1)** outperforms the larger NEW PE1 architecture across accuracy (+0.50%) and F1-score (+0.60%) while requiring **43% fewer parameters** (6.52M vs 11.49M).
+
+1. **Accuracy & F1-Score**: The OLD Baseline achieves **99.20% Accuracy** and **0.9931 Macro F1**, whereas the NEW PE1 model achieves **98.70% Accuracy** (-0.0050 difference).
+2. **Parameter Efficiency**: EfficientNet-B1 has **6.52M parameters**, whereas EfficientNet-B3 with custom classification head expands parameter count by +76.25% to **11.49M parameters** without performance gain on this dataset size.
+3. **Verdict**: Upgrading backbone size and head complexity without expanding dataset diversity or using learning rate decay tuning led to slight overfitting, making the baseline model superior in both accuracy and parameter efficiency.
