@@ -1,12 +1,13 @@
-# PE1: EfficientNet-B3 Brain Tumor Classification Experiment
+# Project Exhibition 1 (PE1): EfficientNet-B3 Brain Tumor Classification Experiment
 
-Controlled architecture modification experiment comparing **EfficientNet-B3 + Improved Classification Head (PE1)** against the **EfficientNet-B1 baseline** on the BRISC2025 brain tumor MRI dataset.
+Controlled architecture modification experiment comparing **EfficientNet-B3 + Improved Classification Head (Project Exhibition 1 - PE1)** against the **EfficientNet-B1 baseline** on the BRISC2025 brain tumor MRI dataset.
 
 ---
 
 ## 1. Project Purpose
 
-This repository implements **PE1 (Practical Experiment 1)**, a controlled modification of the baseline classification pipeline.
+This repository implements **Project Exhibition 1 (PE1)**, a controlled modification of the baseline classification pipeline.
+
 The goal is to answer the research question:
 > *"Which model performs better on the same BRISC2025 classification task under the same training/evaluation protocol?"*
 

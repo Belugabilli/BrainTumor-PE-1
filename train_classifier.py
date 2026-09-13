@@ -2,7 +2,7 @@
 Main Training Script
 
 Brain Tumor Classification
-PE1 Experiment
+Project Exhibition 1 (PE1) Experiment
 """
 
 import argparse
@@ -21,8 +21,9 @@ from utils.seed import set_seed
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Train the PE1 EfficientNet-B3 classifier."
+        description="Train the Project Exhibition 1 (PE1) EfficientNet-B3 classifier."
     )
+
     parser.add_argument(
         "--config",
         default="configs/classification.yaml",

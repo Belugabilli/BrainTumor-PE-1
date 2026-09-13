@@ -1,9 +1,10 @@
 """
-PE1 Brain Tumor Classifier
+Project Exhibition 1 (PE1) Brain Tumor Classifier
 
 Modified architecture based on the BRISC2025 reproduction baseline.
 Backbone: EfficientNet-B3
 """
+
 
 import timm
 import torch.nn as nn

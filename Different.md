@@ -1,12 +1,13 @@
-# Difference Matrix: OLD (Baseline) vs NEW (PE1)
+# Difference Matrix: OLD (Baseline) vs NEW (Project Exhibition 1 - PE1)
 
-Comparison between the **OLD Baseline** (`/Users/hanish/Downloads/BrainTumor-Reproduction`) and the **NEW PE1 Model** (`/Users/hanish/Downloads/BrainTumor-PE1`).
+Comparison between the **OLD Baseline** (`/Users/hanish/Downloads/BrainTumor-Reproduction`) and the **NEW Project Exhibition 1 (PE1) Model** (`/Users/hanish/Downloads/BrainTumor-PE1`).
 
 ---
 
 ## 1. System & Architecture Comparison
 
-| Feature / Property | OLD Baseline (`BrainTumor-Reproduction`) | NEW PE1 (`BrainTumor-PE1`) | Difference (NEW - OLD) |
+| Feature / Property | OLD Baseline (`BrainTumor-Reproduction`) | NEW Project Exhibition 1 (`BrainTumor-PE1`) | Difference (NEW - OLD) |
+
 | :--- | :--- | :--- | :--- |
 | **Model Backbone** | EfficientNet-B1 | EfficientNet-B3 | Upgrade B1 → B3 |
 | **Feature Vector Dimension** | 1,280 | 1,536 | +256 features |

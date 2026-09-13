@@ -1,6 +1,7 @@
 """
-Evaluate the PE1 classifier on the untouched BRISC2025 test set.
+Evaluate the Project Exhibition 1 (PE1) classifier on the untouched BRISC2025 test set.
 """
+
 
 from __future__ import annotations
 
@@ -83,8 +84,9 @@ BASELINE = {
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Evaluate PE1 on the official BRISC2025 classification test set."
+        description="Evaluate Project Exhibition 1 (PE1) on the official BRISC2025 classification test set."
     )
+
     parser.add_argument(
         "--config",
         default="configs/classification.yaml",
