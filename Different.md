@@ -21,9 +21,9 @@ Comparative evaluation between the **OLD Baseline Repository** ([BrainTumor-Repr
 
 ---
 
-## 2. Test Set Performance Difference Matrix (1,000-Image Official Test Set)
+## 2. Test Set & Computational Performance Comparison Matrix
 
-| Metric | OLD Baseline (`EfficientNet-B1`) | NEW PE1 (`EfficientNet-B3`) | Absolute Difference (NEW - OLD) | Relative Change |
+| Metric / Parameter | OLD Baseline (`EfficientNet-B1`) | NEW PE1 (`EfficientNet-B3`) | Absolute Difference (NEW - OLD) | Relative Change |
 | :--- | :---: | :---: | :---: | :---: |
 | **Test Loss** | **0.0236** | 0.0562 | +0.0326 | +138.1% |
 | **Overall Accuracy** | **0.9920 (99.20%)** | 0.9870 (98.70%) | **-0.0050 (-0.50%)** | -0.50% |
@@ -33,6 +33,8 @@ Comparative evaluation between the **OLD Baseline Repository** ([BrainTumor-Repr
 | **Weighted Precision** | **0.9921** | 0.9871 | -0.0050 | -0.50% |
 | **Weighted Recall** | **0.9920** | 0.9870 | -0.0050 | -0.50% |
 | **Weighted F1-Score** | **0.9920** | 0.9870 | **-0.0050** | -0.50% |
+| **Training Duration (50 Epochs)** | **~2,600 sec (~43.3 min)** | 4,337.8 sec (~72.3 min) | +1,737.8 sec | +66.8% slower training |
+| **Inference Time / Image (`mps`)** | **0.92 ms / image** | 1.33 - 1.63 ms / image | +0.41 - 0.71 ms | +44.6% slower inference |
 
 ---
 
@@ -47,11 +49,25 @@ Comparative evaluation between the **OLD Baseline Repository** ([BrainTumor-Repr
 
 ---
 
-## 4. Key Takeaways & Scientific Summary
+## 4. Computational & Timing Analysis
+
+1. **Training Duration**:
+   - **OLD Baseline (EfficientNet-B1)**: Takes **~52 seconds per epoch** (~2,600 seconds total for 50 epochs / ~43.3 mins).
+   - **NEW PE1 (EfficientNet-B3)**: Takes **~86 seconds per epoch** (4,337.8 seconds total for 50 epochs / ~72.3 mins).
+   - **Difference**: PE1 takes **~66.8% longer** to train due to larger feature resolution and deeper network layers.
+
+2. **Inference Latency & Throughput**:
+   - **OLD Baseline (EfficientNet-B1)**: Processes 1,000 test images in **~0.92 seconds** (**0.92 ms per image** / ~1,087 images/sec).
+   - **NEW PE1 (EfficientNet-B3)**: Processes 1,000 test images in **~1.33 - 1.63 seconds** (**1.33 - 1.63 ms per image** / ~614 - 750 images/sec).
+   - **Difference**: OLD Baseline is **~44.6% faster** in real-time inference.
+
+---
+
+## 5. Key Takeaways & Scientific Summary
 
 > [!NOTE]
-> **Key Finding**: The **OLD Baseline (EfficientNet-B1)** outperforms the larger NEW PE1 architecture across accuracy (+0.50%) and F1-score (+0.60%) while requiring **43% fewer parameters** (6.52M vs 11.49M).
+> **Key Finding**: The **OLD Baseline (EfficientNet-B1)** outperforms the larger NEW PE1 architecture across accuracy (+0.50%), F1-score (+0.60%), training speed (+66.8% faster), and inference latency (+44.6% faster) while requiring **43% fewer parameters** (6.52M vs 11.49M).
 
 1. **Accuracy & F1-Score**: The OLD Baseline achieves **99.20% Accuracy** and **0.9931 Macro F1**, whereas the NEW PE1 model achieves **98.70% Accuracy** (-0.0050 difference).
-2. **Parameter Efficiency**: EfficientNet-B1 has **6.52M parameters**, whereas EfficientNet-B3 with custom classification head expands parameter count by +76.25% to **11.49M parameters** without performance gain on this dataset size.
-3. **Verdict**: Upgrading backbone size and head complexity without expanding dataset diversity or using learning rate decay tuning led to slight overfitting, making the baseline model superior in both accuracy and parameter efficiency.
+2. **Parameter & Compute Efficiency**: EfficientNet-B1 has **6.52M parameters**, whereas EfficientNet-B3 with custom classification head expands parameter count by +76.25% to **11.49M parameters** without performance gain on this dataset size.
+3. **Verdict**: Upgrading backbone size and head complexity without expanding dataset diversity or using learning rate decay tuning led to slight overfitting, making the baseline model superior in accuracy, parameter efficiency, training speed, and inference speed.

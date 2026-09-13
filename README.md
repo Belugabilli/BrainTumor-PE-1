@@ -147,9 +147,9 @@ All metrics were computed on the official **1,000-image untouched test set** usi
 | **Macro Recall** | **0.9932** | 0.9890 | -0.0042 |
 | **Macro F1** | **0.9931** | 0.9871 | -0.0060 |
 | **Weighted F1** | **0.9920** | 0.9870 | -0.0050 |
-| **Parameters** | **6,518,308** | 11,488,300 | +4,969,992 |
-| **Training Duration** | N/A | 4,445.04 sec (50 epochs) | N/A |
-| **Inference Time / Image** | N/A | 1.65 ms (`mps`) | N/A |
+| **Parameters** | **6,518,308** | 11,488,300 | +4,969,992 (+76.25%) |
+| **Training Duration (50 Epochs)** | **~2,600 sec (~43.3 min)** | 4,337.8 sec (~72.3 min) | +1,737.8 sec (+66.8%) |
+| **Inference Time / Image** | **0.92 ms (`mps`)** | 1.33 - 1.63 ms (`mps`) | +0.41 - 0.71 ms (+44.6%) |
 
 ### PE1 Per-Class Breakdown (Test Set)
 
