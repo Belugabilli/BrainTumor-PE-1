@@ -2,11 +2,14 @@
 
 Controlled architecture modification experiment comparing **EfficientNet-B3 + Improved Classification Head (Project Exhibition 1 - PE1)** against the **EfficientNet-B1 baseline** on the BRISC2025 brain tumor MRI dataset.
 
+- **OLD Baseline Repository**: [https://github.com/Belugabilli/BrainTumor-Reproduction](https://github.com/Belugabilli/BrainTumor-Reproduction)
+
 ---
 
 ## 1. Project Purpose
 
-This repository implements **Project Exhibition 1 (PE1)**, a controlled modification of the baseline classification pipeline.
+This repository implements **Project Exhibition 1 (PE1)**, a controlled modification of the baseline classification pipeline ([BrainTumor-Reproduction](https://github.com/Belugabilli/BrainTumor-Reproduction)).
+
 
 The goal is to answer the research question:
 > *"Which model performs better on the same BRISC2025 classification task under the same training/evaluation protocol?"*

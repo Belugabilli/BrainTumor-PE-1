@@ -1,8 +1,9 @@
 # Difference Matrix: OLD (Baseline) vs NEW (Project Exhibition 1 - PE1)
 
-Comparison between the **OLD Baseline** (`/Users/hanish/Downloads/BrainTumor-Reproduction`) and the **NEW Project Exhibition 1 (PE1) Model** (`/Users/hanish/Downloads/BrainTumor-PE1`).
+Comparison between the **OLD Baseline Repository** ([BrainTumor-Reproduction](https://github.com/Belugabilli/BrainTumor-Reproduction)) and the **NEW Project Exhibition 1 (PE1) Model** ([BrainTumor-PE-1](https://github.com/Belugabilli/BrainTumor-PE-1.git)).
 
 ---
+
 
 ## 1. System & Architecture Comparison
 
