@@ -169,6 +169,7 @@ All metrics were computed on the official **1,000-image untouched test set** usi
 Under identical training/evaluation protocols and data splits:
 - **Baseline EfficientNet-B1** achieves an accuracy of **0.9920** and Macro F1 of **0.9931** with **6.52M parameters**.
 - **PE1 (EfficientNet-B3)** achieves an accuracy of **0.9870** and Macro F1 of **0.9871** with **11.49M parameters**.
+- **Paper Document :-** `Report/Research Paper.docx`
 
 **Verdict**: Increasing backbone size to EfficientNet-B3 and using the modified classification head did **not** improve classification performance on this dataset split. The baseline EfficientNet-B1 maintains slightly higher accuracy and F1 score with ~43% fewer parameters.
 
