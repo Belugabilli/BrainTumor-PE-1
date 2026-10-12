@@ -3,6 +3,7 @@
 Controlled architecture modification experiment comparing **EfficientNet-B3 + Improved Classification Head (Project Exhibition 1 - PE1)** against the **EfficientNet-B1 baseline** on the BRISC2025 brain tumor MRI dataset.
 
 - **OLD Baseline Repository**: [https://github.com/Belugabilli/BrainTumor-Reproduction](https://github.com/Belugabilli/BrainTumor-Reproduction)
+- **BRISC 2025 Dataset Link**: [https://www.kaggle.com/datasets/briscdataset/brisc2025](https://www.kaggle.com/datasets/briscdataset/brisc2025)
 
 ---
 
